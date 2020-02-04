@@ -1,0 +1,13 @@
+POST http://localhost:3000/inicio
+Content-Type: application/json 
+
+{
+  "nickname": "hhvj",
+  "temperatura": 5,
+  "humedad": 6,
+  "latitud": 45,
+  "longitud": 62
+}
+###
+//DELETE   http://localhost:3000/inicio/5e2fa593e438e8347cb7f7bf
+GET http://localhost:3000/inicio
