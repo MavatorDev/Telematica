@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const usuarioSchema = new mongoose.Schema({
+  
       nombre: {
         type: String,
         required: true
@@ -11,20 +12,15 @@ const usuarioSchema = new mongoose.Schema({
       },
       contrasena: {
         type: String,
-        required: true
+        required: true,
+        select: false
       },
-      edad: {
+      
+      email: {
         type: String,
         required: true
       },
-      ocupacion: {
-        type: Number,
-        required: true
-      },
-      nacionalidad: {
-        type: String,
-        required: true
-      },
+      
       fecha: {
         type: Date,
         required: true,
