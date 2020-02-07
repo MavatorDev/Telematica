@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<div id="pat"></div>
+<head >
+  <meta charset="utf-8">
+  <title>DatosArduino</title>
+  <style>
+  #cabecera {
+        color:#fff;
+        background-color:#000;
+        padding:10px;
+        text-align: center;
+      }
+      #contenedor {
+        margin:0 auto;
+        width:1540px;
+        background: pink;
+      }
+      #datos {
+        color:#000;
+        background-color:transparent;
+        padding:10px;
+        width:154px;
+        border-radius: 50px;
+        height: 500px;
+    
+      }
+      #pie { 
+        background-color:#000;
+        
+        color:#fff;
+        padding:15;
+        text-align:center;
+        text-decoration: royalblue;
+      }
+      
+      
+  </style>
+    <h1 style="text-align: center;"><p>My App</p></h1>
+</head>
+<body>
+  <div id="contenedor">
+    
+    <div id="cabecera">
+      <p>Inicio</p>
+    </div>
+    <div id="datos">
+
+      <h3> <p>Nickname</p></h3>
+      <label>
+      <fieldset>
+        <div>
+          
+          <script>
+            fetch('http://localhost:3000/inicio',{
+              method: 'POST',
+              headers:{
+                'Content-Type': 'application/json',
+
+              },
+              body: JSON.stringify({
+                nickname:'manuelita',
+                temperatura: 7,
+                humedad: 8,
+                latitud: 7,
+                longitud: 3
+
+              })
+            })  
+            .then((response) =>{
+              response.json()
+            })
+          </script> 
+             
+        </div></fieldset>
+      </label>
+
+
+       <h3> <p>Temperatura</p></h3>
+       <label>
+
+      <fieldset><div>
+        <script id="hola">
+        fetch('http://localhost:3000/inicio')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log('data = ', data);
+    
+  });
+  
+        </script>
+        
+      </div></fieldset>
+      </label>
+      
+      <h3> <p>Humedad</p></h3>
+      
+
+     
+      
+    </div>
+    
+    <div id="pie">
+     
+      <p>Última actualizacion:</p>
+    </div>
+  </div>
+  
+</body>
+</html>
