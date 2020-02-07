@@ -12,8 +12,8 @@ const usuarioSchema = new mongoose.Schema({
       },
       contrasena: {
         type: String,
-        required: true,
-        select: false
+        required: true
+        //select: false
       },
       
       email: {

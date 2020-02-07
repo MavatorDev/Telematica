@@ -42,14 +42,14 @@ router.post('/register',  (req, res) => {
         userdata.contrasena= hash
         Usuario.create(userdata)
         .then(usuario => {
-          res.json({status:usuario.nickname+ ' registered'})
+          res.json({status:usuario.nickname+ ' registrado'})
         })
         .catch(err => {
           res.send('error: '+err)
         })
       })
     }else{
-      res.json({error: 'El susuario ya se encuentra registrado'})
+      res.json({error: 'El usuario ya sse encuentra registrado'})
     }
   })
   .catch(err => {

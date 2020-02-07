@@ -43,18 +43,18 @@ router.post('/register',  (req, res) => {
         userdata.contrasena= hash
         UsuarioModel.create(userdata)
         .then(usuario => {
-          res.json({status:usuario.nickname+ ' registrado'})
+          res.json({status:usuario.email + ' registrado'})
         })
         .catch(err => {
-          res.send('error: '+err)
+          res.status(401).send('error: '+err)
         })
       })
     }else{
-      res.json({error: 'El usuario ya sse encuentra registrado'})
+      res.status(401).json({error: 'El usuario ya sse encuentra registrado'})
     }
   })
   .catch(err => {
-    res.send('error:' + err)
+    res.status(401).send('error:' + err)
   })
   })
 
@@ -64,7 +64,8 @@ router.post('/register',  (req, res) => {
         email:req.body.email,
         
       }
-    ).then(usuario =>{
+    )
+    .then(usuario =>{
       if(usuario){
         if(bcrypt.compareSync(req.body.contrasena, usuario.contrasena)){
           const payload = {
@@ -74,19 +75,20 @@ router.post('/register',  (req, res) => {
            email: usuario.email
 
           }
-          let token = jwt.sign(payload.process.env.SECRET_KEY,{
+          let token = jwt.sign(payload, process.env.SECRET_KEY,{
             expiresIn: 1440
           })
           res.send(token)
         }else{
-          res.json({error: "usuario o contrasena invalidos"})
+          res.status(401).json({error: "INV"})
         }
       }else{
-        res.json({error: "El usuario no existe"})
+        res.status(401).json({error: "NE"})
       }
     })
     .catch(err =>{
-      res.send('error: ' + err)
+      res.status(401).send('no user exists in db to update'+err);
+      //res.send('error: ' + err)
     })
   })
   
