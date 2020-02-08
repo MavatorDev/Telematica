@@ -9,7 +9,7 @@ export const register = nuevoUsuario =>{
            email:nuevoUsuario.email 
         })
         .then(res => {
-            console.log('Registrado!')
+            console.log('El usuario ha sido registrado')
         })
 }
 

@@ -40,11 +40,11 @@ class Perfil extends Component{
                            Perfil
                        </h1>
                        </div> 
-                       <table className="tabla">
+                       <table className="tabla" >
                            <tbody>
                                <tr>
-                                   <td>nombre</td>
-                                   <td>{this.state.nombre}</td>
+                                   <td></td>
+                                   <td><h5>{this.state.nombre}</h5></td>
                                </tr>
                            </tbody>
                        </table>
