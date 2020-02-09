@@ -1,5 +1,6 @@
 import React from 'react'
 
+
     const Dato = ({ datos }) => {
       return (
         <div>
@@ -9,18 +10,19 @@ import React from 'react'
         
          
            
-            <tr> <th><h2>Temperatura</h2></th>
-            <th><h2>Temperatura</h2></th>
-            <th><h2>Temperatura</h2></th>
-            <th><h2>Temperatura</h2></th>
-            <th><h2>Temperatura</h2></th>
+            <tbody> <tr>
+            <th><h2>nickname</h2></th>
+            <th><h2>Tmeperatura</h2></th>
+            <th><h2>Humedad</h2></th>
+            <th><h2>Longitud</h2></th>
+            <th><h2>Latitud</h2></th>
                                
-            </tr>     
+            </tr></tbody>     
             <td>
             { 
           datos.map((datos) => (
            
-                <tr><h9 class="card-title">{datos.temperatura }</h9> </tr>             
+                <tbody><h9 class="card-title">{datos.temperatura }</h9> </tbody>             
               
           ))}
                   </td>        
@@ -29,7 +31,7 @@ import React from 'react'
             { 
           datos.map((datos) => (
            
-                <tr><h9 class="card-title">{datos.humedad }</h9> </tr>             
+                <tbody><h9 class="card-title">{datos.humedad }</h9> </tbody>             
               
           ))}
                   </td>
@@ -37,7 +39,7 @@ import React from 'react'
             { 
           datos.map((datos) => (
            
-                <tr><h9 class="card-title">{datos.longitud }</h9> </tr>             
+                <tbody><h9 class="card-title">{datos.longitud }</h9> </tbody>             
               
           ))}
                   </td>
@@ -45,7 +47,7 @@ import React from 'react'
             { 
           datos.map((datos) => (
            
-                <tr><h9 class="card-title">{datos.latitud }</h9> </tr>             
+                <tbody><h9 class="card-title">{datos.latitud }</h9> </tbody>             
               
           ))}
                   </td>
@@ -53,7 +55,7 @@ import React from 'react'
             { 
           datos.map((datos) => (
            
-                <tr><h9 class="card-title">{datos.fecha }</h9> </tr>             
+                <tbody><h9 class="card-title">{datos.fecha }</h9> </tbody>             
               
           ))}
                   </td>

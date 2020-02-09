@@ -46,17 +46,25 @@ router.post('/register',  (req, res) => {
           res.json({status:usuario.email + ' registrado'})
         })
         .catch(err => {
-          res.status(401).send('error: '+err)
+          res.status(401).send({
+            error: "Es necesario el token de autenticación"
+          })
         })
       })
     }else{
-      res.status(401).json({error: 'El usuario ya sse encuentra registrado'})
+      res.status(401).send({
+        error: "Es necesario el token de autenticación"
+      })
     }
   })
   .catch(err => {
-    res.status(401).send('error:' + err)
+    res.status(401).send({
+      error: "Es necesario el token de autenticación"
+    })
   })
   })
+
+
 
   router.post('/login', (req, res)=>{
     UsuarioModel.findOne(
@@ -76,7 +84,7 @@ router.post('/register',  (req, res) => {
 
           }
           let token = jwt.sign(payload, process.env.SECRET_KEY,{
-            expiresIn: 1440
+            expiresIn: 60 * 60 * 0.5
           })
           res.send(token)
         }else{

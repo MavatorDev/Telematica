@@ -32,6 +32,7 @@ class Perfil extends Component{
         .catch(console.log)
     }    
     render(){
+       
         return(
             <div className="contenedor">
                 <div className="jumbotron mt -5">
