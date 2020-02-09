@@ -1,10 +1,10 @@
-POST http://localhost:3000/inicio/user
+POST http://localhost:3000/resgiter
 Content-Type: application/json 
 
 {
-  "nombre": "hhvj",
+  "nombre": "hhvjnn",
   "nickname": "nick",
-  "contrasena": "contra",
+  "contrasena": "contbbra",
   "email":"email"
 }
 ###

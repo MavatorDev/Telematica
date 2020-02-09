@@ -7,23 +7,7 @@ const UsuarioModel= require('../models/usuario')
 
 process.env.SECRET_KEY= 'secret'
 
-// Get all subscribers
-/*router.get('/user', async(req, res) => {
-    try {
-        var datosusuario = await usuario.find()
-           
-        res.json(datosusuario)
-        
-        
-    } catch (err) {
-        res.status(500).json({ message: err.message })
-      }
- })
 
-// Get one subscriber
-router.get('/user/:id', getDatosusuario,(req, res) => {
-    res.json(res.datousuario)
-})*/
 
 // Create one subscriber
 router.post('/register',  (req, res) => {
@@ -100,62 +84,5 @@ router.post('/register',  (req, res) => {
     })
   })
   
-  /*
-    try {
-      const newDatousuario = await datosusuario.save()
-      res.status(201).json(newDatousuario)
-    } catch (err) {
-      res.status(400).json({ message: err.message })
-    }
-  })
-
-// Update one subscriber
-router.patch('/user/:id', getDatosusuario, async (req, res) => {
-    if (req.body.nombre != null) {
-      res.datousuario.nombre = req.body.nombre
-    }
   
-    if (req.body.nickname != null) {
-      res.datousuario.nickname = req.body.nickname
-    }
-    if (req.body.contrasena != null) {
-        res.datousuario.contrasena = req.body.contrasena
-      }
-      if (req.body.email != null) {
-        res.datousuario.email = req.body.email
-      }
-      
-    try {
-      const updateddatousuario = await res.datousuario.save()
-      res.json(updateddatousuario)
-    } catch(err) {
-      res.status(400).json({ message: err.message })
-    }
-  
-  })
-
-// Delete one subscriber
-router.delete('/user/:id', getDatosusuario, async (req, res) => {
-    try {
-        await res.datousuario.remove()
-        res.json({ message: 'Deleted This data' })
-      } catch(err) {
-        res.status(500).json({ message: err.message })
-      }
-})
-
-
-async function getDatosusuario(req, res, next) {
-    try {
-      datousuario = await usuario.findById(req.params.id)
-      if (datousuario == null) {
-        return res.status(404).json({ message: 'Cant find data'})
-      }
-    } catch(err){
-      return res.status(500).json({ message: err.message })
-    }
-  
-    res.datousuario = datousuario
-    next()
-  }*/
 module.exports= router

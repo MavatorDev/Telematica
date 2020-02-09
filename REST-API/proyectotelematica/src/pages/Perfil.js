@@ -16,11 +16,12 @@ class Perfil extends Component{
     componentDidMount(){
         const token= localStorage.usertoken
         const decoded= jwt_decode(token)
+        const verify= token.verify
         this.setState({
             id: decoded.id,
            nombre: decoded.nombre,
            nickname: decoded.nickname,
-           email: decoded.email 
+           email: decoded.email            
         })
 
         
@@ -28,7 +29,9 @@ class Perfil extends Component{
         .then(res => res.json())
         .then((data) => {
           this.setState({ datoss: data })
+          console.log(verify)
         })
+        
         .catch(console.log)
     }    
     render(){

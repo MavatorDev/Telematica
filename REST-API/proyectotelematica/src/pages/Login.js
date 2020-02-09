@@ -138,7 +138,7 @@ class Login extends Component{
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="./inicio.js" variant="body2">
+                <Link href="./inicio" variant="body2">
                   Forgot password?
                 </Link>
               </Grid>
@@ -157,38 +157,7 @@ class Login extends Component{
       </Grid>
     </Grid>
         
-        /*<div className="contenerdor">
-          <div className="celda">
-            <div className="otro">
-              <form noValidate onSubmit={this.onSubmit}>
-                <h1 className="entrar" >Entrar</h1>
-                <div className="formulario">
-                  <label htmlFor="email">Email</label>
-                  <input type="email"
-                  className="control"
-                  name="email"
-                  placeholder="Ingrese Email"
-                  value={this.state.email}
-                  onChange={this.onChange}/>
-
-                </div>
-                <div className="formulario">
-                  <label htmlFor="contrasena">Contrasena</label>
-                  <input type="password"
-                  className="control"
-                  name="contrasena"
-                  placeholder="Ingrese contrasena"
-                  value={this.state.contrasena}
-                  onChange={this.onChange}/>
-
-                </div>
-                <button type="submit" className="boton" onSubmit={this.onSubmit}/>
-                
-                
-              </form>
-            </div>
-          </div>
-        </div>*/
+       
       )
         }
   }
